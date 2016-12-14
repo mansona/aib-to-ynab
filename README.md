@@ -8,7 +8,7 @@
 
 ## Usage
 
-		aib-to-ynab --file=Transaction_Export.csv --output=Transaction_Export_CONVERTED.csv [--map=map.json]
+		aib-to-ynab --input=Transaction_Export.csv --output=Transaction_Export_CONVERTED.csv [--map=map.json]
 
 ## Mapping files
 If you supply a mapping file, we'll try to map AIB transactions to payees and categories. This matching is pretty simple, keys in a JSON file are matched with transaction descriptions with a "starts with" check. So, for example, a transaction with a description of `VDP-PAYPAL` will match transactions that start with this (e.g. `VDP-PAYPAL *SPOTIF` would match). Beneath these keys is an object with two keys: `payee` & `category`, which you can use to specify your payees and categories. Payees and categories here work the same way they do in YNAB, so transfers, for example, will have the same rules as YNAB for whether they need a category or not.
